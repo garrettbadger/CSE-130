@@ -38,6 +38,6 @@ def game(guess, guesses, difficulty, value_random):
         elif guess < value_random:
             print("That was too low!")
         else:
-            print(f"You guessed it! The number was {value_random} and you guessed it in {len(guesses)} \n {guesses}")
+            print(f"You guessed it! The number was {value_random} and you guessed it in {len(guesses)} tries! \n {guesses}")
 # Give the user a report: How many guesses and what the guesses where
 game(guess, guesses, difficulty, value_random)
