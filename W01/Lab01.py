@@ -5,9 +5,11 @@
 # 3. Assignment Description:
 #    Create a random number guessing game
 # 4. What was the hardest part? Be as specific as possible.
-#    -a paragraph or two about how the assignment went for you-
+#    -The hardest part of this assignment was remembering how python works. I did an intership over the summer all in Java
+#     so it was a little tricky remembering the syntax. I also had a hard time with the list at first but that was because, again, 
+#     I was used to working with lists in Java and not Python but once I got through those hiccups it went pretty smoothly.    
 # 5. How long did it take for you to complete the assignment?
-#    -total time in hours including reading the assignment and submitting the program-  
+#    For this assignment it took about 2.5 hours total with the reading and the assignment.
 
 import random
 
