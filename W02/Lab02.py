@@ -26,7 +26,7 @@ username = input("Please enter a username: ")
 password = input("Please enter a password: ")
 
 u_location = -1
-p_location = -1
+p_location = -2
 
 for i in range(len(usernames)):
     if (usernames[i] == username):
