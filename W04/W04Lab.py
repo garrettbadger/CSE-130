@@ -41,14 +41,14 @@ def Hotels_Count(PA, NC, PC):
 def Num_Houses(PA, NC, PC, av_houses):
 
     #Calculate how many houses are needed for a hotel on PA.
-    PA_needed = 5 - PA
+    PA_needed = 4 - PA
     NC_needed = 4 - NC
     PC_needed = 4 - PC
     total_houses_needed = PA_needed + NC_needed + PC_needed
-    cash_needed = total_houses_needed * 200
+    cash_needed = (total_houses_needed * 200) + 200
 
     #Evaluate if there are enough houses.
-    if (total_houses_needed < av_houses):
+    if (total_houses_needed > av_houses):
         print('There are not enough houses available for purchase at this time.')
     else:
         Cash(cash_needed, PA_needed, NC_needed, PC_needed)
@@ -69,13 +69,13 @@ def Rec_Purchase(cash_needed, PA_needed, NC_needed, PC_needed):
     total_houses = PC_needed + PA_needed + NC_needed
 
     #Evaluate how many houses to buy and where to put them.
-    if(NC_needed and PC_needed < 4):
+    if(NC_needed and PC_needed <= 4):
         print(f'This will cost ${cash_needed}.\n Purchase 1 hotel and {total_houses} house(s).\n Put 1 hotel on Pennsylvania and return any houses to the bank. \n '
         f'Put {NC_needed} house(s) on North Carolina. \n Put {PC_needed} house(s) on Pacific.')
-    elif(NC_needed < 4):
+    elif(NC_needed <= 4):
         print(f'This will cost ${cash_needed}.\n Purchase 1 hotel and {total_houses} house(s).\n Put 1 hotel on Pennsylvania and return any houses to the bank. \n '
         f'Put {NC_needed} house(s) on North Carolina.')
-    elif(PC_needed < 4):
+    elif(PC_needed <= 4):
         print(f'This will cost ${cash_needed}.\n Purchase 1 hotel and {total_houses} house(s).\n Put 1 hotel on Pennsylvania and return any houses to the bank. \n '
         f'Put {PC_needed} house(s) on Pacific.')
     else:
