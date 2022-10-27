@@ -52,13 +52,37 @@
 
 
 
-whitelist = [chr(i) for i in range(65, 91)]+ [chr(i) for i in range(97, 123)]+ [str(i) for i in range(0, 10)]
-print(whitelist)
+# whitelist = [chr(i) for i in range(65, 91)]+ [chr(i) for i in range(97, 123)]+ [str(i) for i in range(0, 10)]
+# print(whitelist)
 
-def sanitize(list, word):
-  for item in list:
-    if item in word:
-      word.replace(item, '')
-  return word
+# def sanitize(list, word):
+#   for item in list:
+#     if item in word:
+#       word.replace(item, '')
+#   return word
 
-print(sanitize(whitelist, "Aslk;jg--asdfl'"))
+# print(sanitize(whitelist, "Aslk;jg--asdfl'"))
+
+
+
+word_list = ["26", "55", "13", "45"]
+pivot = -1
+step = -1
+i_largest = word_list[pivot]
+while abs(pivot) < len(word_list):
+  	
+  i_pivot = word_list[pivot]
+  i_check = word_list[pivot + step]
+  
+  if i_check > i_largest:
+    i_largest = i_check
+    step -= 1
+  elif abs(step) >= len(word_list)-1:
+    replace = word_list.pop(pivot)
+    word_list.insert(pivot, i_largest)
+    word_list.insert(step, i_pivot)
+    pivot-=1
+  else:
+    step -= 1
+  
+print(abs(pivot))
