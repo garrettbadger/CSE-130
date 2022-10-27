@@ -22,6 +22,10 @@
 # if(array_elements == 1):
 #     print("item not found!")
 
+if 'a' < 'b':
+    print('true')
+else:
+    print('false')
 
 # def ComputeTax(income):
 #     if (income < 123700):
