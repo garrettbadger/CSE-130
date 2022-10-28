@@ -69,24 +69,72 @@ else:
 
 
 
-word_list = ["26", "55", "13", "45"]
+word_list = ["26", "6", "90", "55"]
+word_list = [int(i) for i in word_list]
 pivot = -1
 step = -1
 i_largest = word_list[pivot]
-while abs(pivot) < len(word_list):
+
+while abs(pivot) + 1 <= len(word_list):
   	
-  i_pivot = word_list[pivot]
-  i_check = word_list[pivot + step]
+    i_pivot = word_list[pivot]
+    i_check = word_list[pivot + step]
   
-  if i_check > i_largest:
-    i_largest = i_check
-    step -= 1
-  elif abs(step) >= len(word_list)-1:
-    replace = word_list.pop(pivot)
-    word_list.insert(pivot, i_largest)
-    word_list.insert(step, i_pivot)
-    pivot-=1
-  else:
-    step -= 1
+    if i_check > i_largest:
+        i_largest = i_check
+        spot = step + pivot
+        if abs(step + pivot) < len(word_list):  
+            step -= 1
+    
+    elif abs(step) >= len(word_list)+pivot:
+        if i_largest > i_pivot:
+            word_list[pivot], word_list[spot] = word_list[spot], word_list[pivot]
+            pivot-=1
+            step = -1
+            spot = pivot+step
+            if abs(step + pivot) < len(word_list):
+                i_largest = word_list[pivot + step]
+        else:
+            pivot -= 1
+            step = -1
+            spot = pivot+step
+            i_largest = word_list[pivot + step]
+    else:
+        step -= 1
   
-print(abs(pivot))
+print(word_list)
+
+
+word_list = ["26", "6", "90", "55", '79', '109', '108', '40', '200']
+word_list = [int(i) for i in word_list]
+
+len = len(word_list)
+i = 1
+while i < len:
+    x = word_list[i]
+    j = i - 1
+    while (j >= 0 and word_list[j] > x):
+        word_list[j + 1] = word_list[j]
+        j = j - 1
+    word_list[j+1] = x
+    i += 1
+# word_list[0], word_list[3] = word_list[3], word_list[0]
+print(word_list)
+
+
+
+# word_list = ["26", "6", "90", "55", '79', '109', '108', '40', '200']
+# word_list = [int(i) for i in word_list]
+
+# len = len(word_list)
+# i = -1
+# while i < len:
+#     x = word_list[i]
+#     j = i - 1
+#     while (j <= 0 and word_list[j] > x):
+#         word_list[j + 1] = word_list[j]
+#         j = j - 1
+#     word_list[j+1] = x
+#     i -= 1
+
+# print(word_list)
