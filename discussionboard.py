@@ -139,5 +139,23 @@ else:
 
 # print(word_list)
 
-grade = "A+"
-print(len(grade))
+# grade = "A+"
+# print(len(grade))
+
+def francois(num):
+    if num == 1:
+        return 2
+    elif num ==2:
+        return 1
+    else:
+        return francois(num-1) + francois(num-2)
+master_francois = [2, 1]
+def fib_to(n, m_list):
+    if n <= len(m_list):
+        return m_list[n-1]
+    for i in range(2, n):
+        m_list.append(m_list[-1] + m_list[-2])
+    return m_list        
+
+num = int(input("what number would you like? "))
+print(fib_to(num, master_francois))
