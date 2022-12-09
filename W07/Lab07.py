@@ -1,4 +1,4 @@
-word_list = ["26", "6", "90", "55", "4", "100", "54"]
+word_list = ["26", "6", "90", "55", "54", "100", "1"]
 word_list = [int(i) for i in word_list]
 pivot = -1
 step = -1
