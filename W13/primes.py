@@ -14,8 +14,16 @@ import math
 def main():
     # The user enters a number that the program uses as an upper limit to find primes.
     number = int(input('Please enter a number: '))
-    # Make sure the number variable is of type int
-    assert isinstance(number, int)
+    # Make sure the number variable is of type int and greater than 0
+    try: 
+        assert isinstance(number, int)
+    except:
+        return print("Number is not an integer!")
+    try:    
+        assert number > 0
+    except:
+        return print("Number is not greater than 0!")
+        
     numbers = []
     # Create a list with an index for every number from 0-number and set the value to True
     for i in range(number+1):
